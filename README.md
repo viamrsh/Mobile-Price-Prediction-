@@ -1,60 +1,209 @@
-# Mobile-Price-Prediction-
-Build a system that can predict pricing for a mobile phone using data on available phones in the market. Predict if the mobile can be priced low/med/high/very high. Explore the data to understand the features and figure out an approach.
-# Introduction 
-In today’s competitive smartphone market, pricing plays a crucial role in product positioning and 
-customer decision-making. Mobile phone prices depend on multiple hardware and performance-related 
-features such as RAM, battery capacity, camera quality, internal memory, processor cores, and display 
-specifications. The objective of this project is to develop a machine learning-based prediction system 
-that classifies mobile phones into different price ranges (Low, Medium, High, Very High) based on their 
-technical specifications. By leveraging supervised learning algorithms, the system aims to analyze 
-patterns in historical data and accurately predict the price category of new mobile devices. This project 
-demonstrates the application of data preprocessing, feature engineering, model training, and 
-performance evaluation to build a reliable predictive model. 
-# Methodology 
-The methodology follows a structured machine learning pipeline: 
-Data Collection and Exploration: 
-The dataset containing mobile specifications and corresponding price ranges is loaded and analyzed. 
-Exploratory Data Analysis (EDA) is performed to understand feature distributions, check missing 
-values, detect duplicates, and analyze correlations between features and the target variable. 
-Visualization techniques such as correlation matrices and boxplots help identify important features like 
-RAM and battery power. 
-Feature Engineering: 
-New features are created to improve model performance. Examples include screen size (screen height 
-× width), pixel density, average camera resolution, memory per core, and power efficiency. These 
-derived features help capture complex relationships between hardware specifications and price range. 
-Data Preprocessing: 
-The dataset is split into training and testing sets using stratified sampling to maintain class balance. 
-Feature scaling is applied using StandardScaler for algorithms sensitive to feature magnitude. 
-Model Training: 
-Multiple classification algorithms are implemented, including: 
-• Random Forest 
-• Gradient Boosting 
-• Support Vector Machine (SVM) 
-• Logistic Regression 
-• Decision Tree 
-• K-Nearest Neighbors (KNN) 
-Cross-validation is used to evaluate model stability and prevent overfitting. 
-Model Evaluation and Tuning: 
-Performance is measured using accuracy, cross-validation mean score, confusion matrix, and 
-classification report (precision, recall, F1-score). Hyperparameter tuning is performed using 
-GridSearchCV to optimize selected models. 
-# Output Results 
-The trained models were evaluated on the test dataset. Among all classifiers, ensemble methods such as 
-Random Forest and Gradient Boosting showed the highest accuracy and stability across cross-validation 
-folds. The confusion matrix indicates strong classification performance across all price categories, with 
-minimal misclassification between adjacent price ranges. 
-Feature importance analysis revealed that RAM, battery power, pixel resolution, and internal memory 
-are the most influential features in determining mobile price range. The final optimized model provides 
-accurate predictions for both single and batch inputs using a custom-built prediction class. 
-Overall, the system achieves high classification accuracy, demonstrating the effectiveness of ensemble 
-learning methods for structured tabular datasets. 
-# Conclusion 
-This project successfully implements a complete machine learning pipeline for mobile price range 
-prediction. By combining data exploration, feature engineering, preprocessing, and multiple 
-classification models, a robust and accurate predictive system was developed. Ensemble models such 
-as Random Forest and Gradient Boosting delivered superior performance due to their ability to handle 
-non-linear relationships and feature interactions. 
-The developed system can be extended further by incorporating larger datasets, advanced 
-hyperparameter optimization techniques, and deployment as a web-based prediction service. This study 
-highlights how machine learning techniques can effectively assist in market analysis, pricing strategies, 
-and decision support systems in the mobile industry.
+# 📱 Mobile Price Prediction System
+
+## Introduction
+
+This project is a **Mobile Price Prediction System** developed using **Machine Learning and Data Analysis techniques**.
+
+The main objective of this project is to predict the price category of a mobile phone based on its technical specifications and hardware features.
+
+Mobile phone prices depend on various factors such as RAM, battery capacity, processor, camera quality, internal memory, and screen specifications.
+
+This project uses Machine Learning classification algorithms to analyze mobile phone specifications and classify devices into four different price categories:
+
+- **0 – Low**
+- **1 – Medium**
+- **2 – High**
+- **3 – Very High**
+
+The system helps understand how different mobile specifications influence the overall price category.
+
+---
+
+## Methods
+
+### 1. Data Collection
+
+A mobile phone specifications dataset is used to develop the prediction model.
+
+The dataset contains information about mobile phone hardware specifications and their corresponding price categories.
+
+Important features include:
+
+- Battery Power
+- RAM
+- Internal Memory
+- Processor Cores
+- Processor Speed
+- Front Camera
+- Primary Camera
+- Screen Width
+- Screen Height
+- Pixel Resolution
+
+### 2. Data Preprocessing
+
+Data preprocessing is performed to prepare the dataset for Machine Learning.
+
+The preprocessing steps include:
+
+- Handling missing values
+- Removing duplicate records
+- Identifying and handling outliers
+- Selecting relevant features
+- Converting data into suitable numerical formats
+- Splitting data into training and testing datasets
+- Feature scaling using StandardScaler
+
+These steps help improve data quality and model performance.
+
+### 3. Exploratory Data Analysis (EDA)
+
+Exploratory Data Analysis is performed to understand the relationship between mobile specifications and their price categories.
+
+The analysis includes:
+
+- Price category distribution
+- RAM and price relationship
+- Battery power analysis
+- Internal memory analysis
+- Feature correlation
+- Feature importance
+
+Different visualization techniques, including correlation heatmaps and boxplots, are used to understand the dataset.
+
+### 4. Feature Engineering
+
+Feature engineering is performed to create additional useful features from existing mobile specifications.
+
+The derived features include:
+
+- Screen Size
+- Pixel Density
+- Average Camera Resolution
+- Memory per Core
+- Power Efficiency
+
+These features help the model understand relationships between mobile specifications and price categories.
+
+### 5. Model Training
+
+Multiple Machine Learning classification algorithms are implemented and compared.
+
+The algorithms used include:
+
+- Random Forest
+- Gradient Boosting
+- Support Vector Machine (SVM)
+- Logistic Regression
+- Decision Tree
+- K-Nearest Neighbors (KNN)
+
+The dataset is divided into training and testing sets using stratified sampling.
+
+Cross-validation and GridSearchCV are used to evaluate model performance and optimize hyperparameters.
+
+### 6. Model Evaluation
+
+The trained models are evaluated using different classification metrics.
+
+The evaluation techniques include:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+- Cross-Validation Score
+- Classification Report
+
+These metrics help identify the best-performing model for mobile price classification.
+
+---
+
+## Output
+
+The trained Machine Learning model predicts the price category of a mobile phone based on its hardware specifications.
+
+### Prediction Workflow
+
+```text
+Mobile Phone Dataset
+        ↓
+Data Preprocessing
+        ↓
+Exploratory Data Analysis
+        ↓
+Feature Engineering
+        ↓
+Feature Scaling
+        ↓
+Train-Test Split
+        ↓
+Machine Learning Models
+        ↓
+Model Evaluation
+        ↓
+Mobile Price Prediction
+```
+
+### Price Categories
+
+The system classifies mobile phones into four categories:
+
+| Class | Price Category |
+|---|---|
+| 0 | Low |
+| 1 | Medium |
+| 2 | High |
+| 3 | Very High |
+
+### Model Results
+
+Multiple classification algorithms are compared to identify the best-performing model.
+
+The evaluation results include accuracy, confusion matrix, precision, recall, and F1-score.
+
+Random Forest and Gradient Boosting demonstrate strong classification performance in the project.
+
+### Application Output
+
+The project also includes a Streamlit-based application that allows users to provide mobile phone specifications and obtain the predicted price category.
+
+---
+
+## Conclusion
+
+This project demonstrates how **Machine Learning classification algorithms** can be used to predict mobile phone price categories based on technical specifications.
+
+By applying data preprocessing, exploratory data analysis, feature engineering, and multiple classification algorithms, the system identifies patterns between mobile hardware features and their corresponding price categories.
+
+The project also demonstrates model comparison, hyperparameter optimization, and application deployment using Streamlit.
+
+The system can be further improved by:
+
+- Using larger and more diverse mobile phone datasets
+- Exploring advanced ensemble learning algorithms
+- Improving feature engineering
+- Performing additional hyperparameter optimization
+- Incorporating real-time mobile market data
+- Enhancing the Streamlit application
+
+Overall, this project provides a practical implementation of **Machine Learning for Mobile Price Classification**.
+
+---
+
+## Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Random Forest
+- Gradient Boosting
+- Support Vector Machine (SVM)
+- GridSearchCV
+- Streamlit
+
+---
